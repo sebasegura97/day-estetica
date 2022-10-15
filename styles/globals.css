@@ -1,8 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Josefin+Slab:wght@400;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: Nudista, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
@@ -15,12 +20,59 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+
+@font-face {
+  font-family: "Heart of stone";
+  src: url("./fonts/HeartStone.ttf");
+  font-display: swap;
+}
+
+
+
+
+@layer components {
+  .font-h1 {
+    @apply font-cursive text-5xl lg:text-8xl text-dark-800;
+    line-height: 5rem;
   }
-  body {
-    color: white;
-    background: black;
+
+  .font-h2 {
+    @apply font-sans font-light text-4xl lg:text-7xl text-dark-800;
+  }
+
+  .font-h3 {
+    @apply font-sans font-light text-3xl lg:text-6xl text-dark-800;
+  }
+
+  .font-h4 {
+    @apply font-sans font-bold text-2xl lg:text-5xl text-dark-700;
+  }
+
+  .font-h5 {
+    @apply font-sans font-light text-xl lg:text-4xl text-dark-800;
+  }
+
+  .font-h6 {
+    @apply font-sans font-bold text-lg lg:text-3xl text-dark-700;
+  }
+  .font-body {
+    @apply font-serif text-lg text-dark-700;
+  }
+
+  .font-legals {
+    @apply font-serif text-xs lg:text-sm text-dark-600;
+  }
+
+  .btn-primary {
+    @apply font-sans text-2xl lg:text-xl bg-primary-500 text-white px-8 py-2 lg:px-10 lg:py-3 rounded-xl hover:bg-primary-700 hover:cursor-pointer transition-all;
+  }
+
+  .text-link {
+    @apply font-sans text-2xl lg:text-xl text-primary-500 px-2 py-0.5 border-b border-solid border-b-primary-500 hover:text-primary-700 hover:cursor-pointer transition-all;
   }
 }
