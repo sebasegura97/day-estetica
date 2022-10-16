@@ -11,4 +11,6 @@ export type CatalogCard = {
 
 export type IAppProps = {
   services: CatalogCard[];
+  totalCount: number;
+  category?: string | null;
 };

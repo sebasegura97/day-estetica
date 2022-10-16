@@ -5,10 +5,9 @@ import Footer from "../../components/Footer";
 import WhatsappFab from "../../components/WhatsappFab";
 import { SmoothScroll } from "../../components/SmoothScroll";
 import { IAppProps } from "./types";
-import Image from "next/image";
 import Main from "./sections/Main";
 
-const Catalog: NextPage<IAppProps> = ({ services }) => {
+const Catalog: NextPage<IAppProps> = ({ services, totalCount, category }) => {
   return (
     <>
       <Head>
@@ -23,10 +22,12 @@ const Catalog: NextPage<IAppProps> = ({ services }) => {
       <main className="relative ">
         <MainMenu />
         <WhatsappFab />
-
-        <Main services={services} />
+        <Main
+          services={services}
+          totalCount={totalCount}
+          defaultFilter={category || undefined}
+        />
       </main>
-
       <Footer />
     </>
   );

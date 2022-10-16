@@ -19,6 +19,7 @@ const Logo: React.FC<IconProps> = ({
   return (
     <Link href="/">
       <motion.svg
+        className="hover:cursor-pointer"
         viewBox="0 0 650.88 209.4"
         width={width}
         height={width * 0.32}

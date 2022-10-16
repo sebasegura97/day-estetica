@@ -1,27 +1,25 @@
-import { createClient } from "contentful";
-import { CatalogCard, IAppProps } from "../types";
+import { GetServerSideProps } from "next";
+import { QUERY_LIMIT } from "../constants";
+import { IAppProps } from "../types";
+import getContentfulCatalog from "../utils/getContentfulCatalog";
 
-const getServerSideProps = async () => {
-  const client = createClient({
-    // This is the space ID. A space is like a project folder in Contentful terms
-    space: process.env.CONTENTFUL_SPACE_ID || "",
-    // This is the access token for this space. Normally you get both ID and the token in the Contentful web app
-    accessToken: process.env.CONTENTFUL_ACESS_TOKEN || "",
+const getServerSideProps: GetServerSideProps = async ({ query }) => {
+  const category =
+    typeof query.category === "string" ? query.category : undefined;
+
+  const response = await getContentfulCatalog({
+    limit: QUERY_LIMIT,
+    category,
   });
-  // This API call will request an entry with the specified ID from the space defined at the top, using a space-specific access token.
-  const response = await client.getEntries<CatalogCard>({
-    content_type: "service",
-    limit: 10,
-    order: "sys.createdAt",
-  });
-  const items = response.items.map((item) => ({ ...item.fields, id: item.sys.id }));
 
   const props: IAppProps = {
-    services: items,
+    services: response?.items || [],
+    totalCount: response?.totalCount || 0,
+    category: category || null,
   };
 
   return {
-    props
+    props,
   };
 };
 export default getServerSideProps;

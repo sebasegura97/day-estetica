@@ -4,7 +4,7 @@ const About = () => {
   return (
     <section className="lg:bg-primary-50" id="nosotros">
       <div className="container mx-auto pt-8 lg:pt-32 ">
-        <h2 className="font-h2 text-center lg:mb-16 text-primary-900">
+        <h2 className="font-h1 text-center lg:mb-16 text-primary-900">
           {" "}
           ¿Quienes Somos?{" "}
         </h2>
