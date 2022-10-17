@@ -60,6 +60,7 @@ a {
   .font-h6 {
     @apply font-sans font-bold text-lg lg:text-3xl text-dark-700;
   }
+
   .font-body {
     @apply font-serif text-lg text-dark-700;
   }
@@ -69,10 +70,34 @@ a {
   }
 
   .btn-primary {
-    @apply font-sans text-2xl lg:text-xl bg-primary-500 text-white px-8 py-2 lg:px-10 lg:py-3 rounded-xl hover:bg-primary-700 hover:cursor-pointer transition-all;
+    @apply font-sans btn btn-md text-white bg-primary-500 hover:bg-primary-700 ;
+  }
+
+  .btn-primary-sm {
+    @apply font-sans btn btn-sm text-white bg-primary-500 hover:bg-primary-700 ;
+  }
+
+  .btn-secondary {
+    @apply font-sans btn btn-md text-white bg-secondary-500 hover:bg-secondary-700 ;
+  }
+
+  .btn-secondary-sm {
+    @apply font-sans btn btn-sm text-white bg-secondary-500 hover:bg-secondary-700 ;
   }
 
   .text-link {
-    @apply font-sans text-2xl lg:text-3xl text-primary-500 px-2 py-0.5 border-b border-solid border-b-primary-500 hover:text-primary-700 hover:cursor-pointer transition-all;
+    @apply font-sans btn btn-md text-primary-500 px-2 py-0.5 rounded-none border-b border-solid border-b-primary-500 hover:text-primary-700 ;
+  }
+
+  .btn-md {
+    @apply text-2xl px-8 py-2 lg:px-10 lg:py-3 rounded-xl
+  }
+
+  .btn-sm {
+    @apply text-xl rounded-md py-1.5 px-6
+  }
+
+  .btn {
+    @apply hover:cursor-pointer transition-all
   }
 }

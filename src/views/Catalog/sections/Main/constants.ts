@@ -1,6 +1,6 @@
 export const FILTERS = [
     {
-        value: undefined,
+        value: "",
         label: 'Todos'
     },{
         value: 'faciales',
