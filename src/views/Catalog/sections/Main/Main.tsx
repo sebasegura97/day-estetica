@@ -1,9 +1,10 @@
-import {
+  import {
   ChevronDown,
   ChevronForward,
   ChevronBack,
 } from "@styled-icons/ionicons-outline";
 import clsx from "clsx";
+import Link from "next/link";
 import { useState } from "react";
 import { BarProgress, CircularProgress } from "../../../../components/Loaders";
 import ArticleCard from "../../components/ArticleCard";
@@ -48,9 +49,9 @@ const Main: React.FC<MainProps> = ({
     if (result?.items?.length) {
       setRenderServices([...result.items]);
       setTotalCount(result.totalCount);
-      setPage(1);
+      setPage(0);
     }
-    document.getElementById('catalogo')?.scrollIntoView()
+    document.getElementById("catalogo")?.scrollIntoView();
     setLoading(false);
   };
 
@@ -66,16 +67,16 @@ const Main: React.FC<MainProps> = ({
       setPage(newPage);
       setTotalCount(result.totalCount);
     }
-    document.getElementById('catalogo')?.scrollIntoView()
+    document.getElementById("catalogo")?.scrollIntoView();
     setLoading(false);
   };
 
   return (
-    <section id="catalogo">
+    <section id="catalogo" className="pb-8">
       {loading && <BarProgress className="fixed top-0 z-50" />}
       <div className="container mx-auto flex flex-col items-center pt-24 px-6 pb-6 md:px-8 lg:pt-36">
         <div className="w-full md:flex flex-row justify-between items-center mb-6 sm:mb-12">
-          <h1 className="font-h1 text-center md:text-start">Catalogo</h1>
+          <h1 className="font-h1 text-center md:text-start">Catálogo</h1>
           {/* Category filter */}
           <div className="flex flex-col relative mt-4">
             <label htmlFor="filter" className="pl-2">
@@ -102,10 +103,20 @@ const Main: React.FC<MainProps> = ({
         {/* Articles list */}
         <div className="grid grid-flow-row grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {renderServices.map((service) => {
-            return <ArticleCard key={service.id} service={service} />;
+            return (
+              <Link
+                href={`/servicios/${service.category}/${service.slug}/`}
+                key={service.id}
+                passHref
+              >
+                <a className="flex">
+                  <ArticleCard service={service} />
+                </a>
+              </Link>
+            );
           })}
         </div>
-        <div className="flex self-end flex-row items-center">
+        <div className="flex self-end flex-row items-center mt-6">
           {loading && <CircularProgress size={24} className="mr-4" />}
           {/* Navigation */}
           <div className="flex flex-row items-center justify-between py-5 cursor-pointer">

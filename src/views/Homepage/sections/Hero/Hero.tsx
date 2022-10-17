@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import Brands from "../../components/Brands";
 import hero from "./assets/hero.png";
 
@@ -12,8 +13,15 @@ const Hero = () => {
         con teconología de punta.
       </h2>
       <div className="flex flex-col items-center sm:flex-row sm:items-baseline">
-        <a className="btn-primary mt-6 sm:mr-6">Ver servicios</a>
-        <a className="text-link mt-2">Quiero alquilar</a>
+        <Link href="/servicios/" passHref>
+          <a className="btn-primary mt-6 sm:mr-6">Ver servicios</a>
+        </Link>
+        <Link
+          href="https://api.whatsapp.com/send?phone=5493876831581&text=Hola!%20Estaba%20viendo%20la%20web%20de%20day%20est%C3%A9tica"
+          passHref
+        >
+          <a className="text-link mt-2">Quiero alquilar</a>
+        </Link>
       </div>
       {/* </div> */}
       <div className="w-full sm:w-7/12 lg:w-1/2 sm:absolute bottom-0 sm:right-0 z-1 relative">

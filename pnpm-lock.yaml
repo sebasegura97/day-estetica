@@ -4,6 +4,8 @@ overrides:
   styled-components: '5'
 
 specifiers:
+  '@contentful/rich-text-react-renderer': ^15.12.1
+  '@contentful/rich-text-types': ^15.13.2
   '@floating-ui/react-dom': 1.0.0
   '@styled-icons/fa-regular': 10.46.0
   '@styled-icons/ionicons-outline': 10.46.0
@@ -31,6 +33,8 @@ specifiers:
   yarn: 1.22.19
 
 dependencies:
+  '@contentful/rich-text-react-renderer': 15.12.1_biqbaboplfbrettd7655fr4n2y
+  '@contentful/rich-text-types': 15.13.2
   '@floating-ui/react-dom': 1.0.0_biqbaboplfbrettd7655fr4n2y
   '@styled-icons/fa-regular': 10.46.0_56nicwxcbpehznvjhlpvpy75bu
   '@styled-icons/ionicons-outline': 10.46.0_56nicwxcbpehznvjhlpvpy75bu
@@ -193,6 +197,23 @@ packages:
       '@babel/helper-string-parser': 7.19.4
       '@babel/helper-validator-identifier': 7.19.1
       to-fast-properties: 2.0.0
+    dev: false
+
+  /@contentful/rich-text-react-renderer/15.12.1_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-bQ69cN51iGBTF3/nYi5MGUaDJ/lnrEXtCUBCxulIZ0fLS/AAEledZTJcEKs+PKeYYgDqiUVDsmx2xZP2QsJJ+Q==}
+    engines: {node: '>=6.0.0'}
+    peerDependencies:
+      react: ^16.8.6 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.6 || ^17.0.0 || ^18.0.0
+    dependencies:
+      '@contentful/rich-text-types': 15.13.2
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
+
+  /@contentful/rich-text-types/15.13.2:
+    resolution: {integrity: sha512-cnVvJjRQ414rprnoMLR/S+18a7Hjp3dR4WhiQ/A6W/LSS5FDx1AbiDZACjIEaQEk5L6FX0oBHanIIbAUTA5YJw==}
+    engines: {node: '>=6.0.0'}
     dev: false
 
   /@emotion/is-prop-valid/0.8.8:

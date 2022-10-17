@@ -62,7 +62,7 @@ a {
   }
 
   .font-body {
-    @apply font-serif text-lg text-dark-700;
+    @apply font-serif text-[16px] text-dark-700;
   }
 
   .font-legals {
