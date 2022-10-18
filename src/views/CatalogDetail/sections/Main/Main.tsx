@@ -41,7 +41,8 @@ const Main: React.FC<MainProps> = ({ article }) => {
       <div className="w-full h-64 sm:h-96 sm:w-8/12  shrink-0 relative rounded-xl overflow-hidden my-4">
         <Image
           priority
-          src={`https://${article.heroImage.fields.file.url}`}
+          alt={article.title}
+          src={`https:${article.heroImage.fields.file.url}`}
           objectFit="cover"
           layout="fill"
         />
