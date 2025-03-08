@@ -86,7 +86,8 @@ a {
   }
 
   .text-link {
-    @apply font-sans btn btn-md text-primary-500 px-2 py-0.5 rounded-none border-b border-solid border-b-primary-500 hover:text-primary-700 ;
+    @apply font-sans btn btn-md text-primary-500 px-2 py-0.5 rounded-none border-b underline hover:text-primary-700;
+    text-underline-offset: 35%;
   }
 
   .btn-md {
