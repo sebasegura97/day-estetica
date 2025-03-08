@@ -4,6 +4,10 @@ export const MAIN_MENU_ITEMS = [
     path: "/#",
   },
   {
+    label: "Productos",
+    path: "https://store.dayspa.com",
+  },
+  {
     label: "Servicios",
     path: "/servicios/",
   },
@@ -19,4 +23,4 @@ export const MAIN_MENU_ITEMS = [
     label: "Contacto",
     path: "/#contacto",
   },
-]
+];
